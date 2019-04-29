@@ -1,6 +1,6 @@
 ## Log Transport Headers in WSO2 EI
 
-This Mediator is s]used to log all the Transport Headers.
+This Mediator is used to log all the Transport Headers.
 
 ## How to use this?
 
