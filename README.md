@@ -14,4 +14,4 @@ Copy the `org.sample.logTransportHeaders-1.0-SNAPSHOT.jar` from target to EI_HOM
 
 Use the class mediator as follows wherever needed in you API or Proxy or etc.
 
-`<class name="org.sample.LogTransportHeaders"/>'`
+`<class name="org.sample.LogTransportHeaders"/>`
