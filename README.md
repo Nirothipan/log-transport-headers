@@ -1,17 +1,18 @@
 ## Log Transport Headers in WSO2 EI
 
-This Mediator is used to log all the Transport Headers.
+This Mediator is used to log all the Transport Headers in WSO2 EI.
+Tested with EI 6.5.0-m6 and ESB 5.0.0 .
 
 ## How to use this?
 
-Checkout this code.
+Place the jar [org.sample.logTransportHeaders-1.0.0.jar](https://github.com/Nirothipan/log-transport-headers/raw/master/target/org.sample.logTransportHeaders-1.0.0.jar) in EI_HOME/lib or ESB_HOME/repository/components/lib
+directory.
 
-Go to the root directory and execute `mvn clean install` 
+Add the following config to log4j.properties file to enable INFO level logs for this mediator.
 
-Please note that I've added the jar file as well, which you can download and use directly form [here](https://github.com/Nirothipan/log-transport-headers/raw/master/target/org.sample.logTransportHeaders-1.0-SNAPSHOT.jar)
+`log4j.logger.org.sample.LogTransportHeaders=INFO`
 
-Copy the `org.sample.logTransportHeaders-1.0-SNAPSHOT.jar` from target to EI_HOME\lib directory.
-
-Use the class mediator as follows wherever needed in you API or Proxy or etc.
+Use this class mediator as follows wherever needed in you API or Proxy or etc then it will log all the transport 
+headers.
 
 `<class name="org.sample.LogTransportHeaders"/>`

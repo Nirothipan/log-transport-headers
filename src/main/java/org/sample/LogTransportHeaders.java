@@ -6,14 +6,14 @@ import org.apache.synapse.mediators.AbstractMediator;
 
 import java.util.Map;
 
+/**
+ * This class is used to log all the transport headers in WSO2 ESB / EI.
+ */
 public class LogTransportHeaders extends AbstractMediator {
 
     public boolean mediate(MessageContext msgContext) {
 
         try {
-
-            log.info("Executing " + this.getClass().getSimpleName());
-
             Map headers = (Map) ((Axis2MessageContext) msgContext).getAxis2MessageContext()
                     .getProperty(org.apache.axis2.context.MessageContext.TRANSPORT_HEADERS);
 
@@ -22,11 +22,15 @@ public class LogTransportHeaders extends AbstractMediator {
                 return true;
             }
 
+            log.info("=======================================================");
+
             for (Object name : headers.keySet()) {
                 String key = name.toString();
                 String value = headers.get(name).toString();
                 log.info(key + " " + value);
             }
+
+            log.info("=======================================================");
 
         } catch (Exception e) {
             log.error("Error while logging TRP Headers", e);
